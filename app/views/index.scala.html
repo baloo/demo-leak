@@ -1,7 +1,15 @@
-@(message: String)
-
-@main("Welcome to Play 2.1") {
-    
-    @play20.welcome(message)
-    
+<html>
+<head>
+<script>
+// Create an EventSource object,
+// passing it the URL of the server sccript
+var evtSrc = new EventSource( "/stream/dummy" );
+ 
+// Listen for messages/events on the EventSource
+evtSrc.onmessage = function ( e ) {
+  console.log(e)
 }
+</script>
+</head>
+</html>
+
